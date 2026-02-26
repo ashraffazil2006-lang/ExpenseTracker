@@ -1,0 +1,55 @@
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 32px;
+    margin-left: 250px;
+    /* Space for sidebar */
+    transition: margin-left var(--transition-normal);
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+        padding-bottom: 80px;
+        /* Space for mobile bottom nav */
+    }
+}
+
+/* Responsive Grids */
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.responsive-grid-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+}
+
+.responsive-grid-asym {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(350px, 1.5fr);
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .responsive-grid-asym {
+        grid-template-columns: 1fr;
+    }
+
+    .responsive-grid-large {
+        grid-template-columns: 1fr;
+    }
+
+    .responsive-grid {
+        grid-template-columns: 1fr;
+    }
+}
